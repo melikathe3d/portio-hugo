@@ -8,6 +8,7 @@
 
 a.text-light,
 a.text-dark {
+
     // transition: all 0.3s ease;
     &:hover {
         color: $primary !important;
@@ -24,14 +25,15 @@ a.text-dark {
 .pre-line {
     margin-left: 20px;
     position: relative;
+
     &::before {
         position: absolute;
         content: "";
         height: 2px;
         width: 20px;
         top: 50%;
-        left: -20px;
-        transform: translateX(-50%);
+        right: -20px;
+        transform: translateX(50%);
         background: $secondary;
     }
 }
@@ -39,6 +41,7 @@ a.text-dark {
 // This fixes the fact that with `markdownify` we can't add `text-light`
 // directly onto the generated `h1`, `h2` etc.
 .text-white {
+
     h1,
     h2,
     h3,
@@ -48,8 +51,11 @@ a.text-dark {
         color: $white;
     }
 }
-@each $color, $value in $theme-colors {
+
+@each $color,
+$value in $theme-colors {
     .text-#{$color} {
+
         h1,
         h2,
         h3,
